@@ -15,3 +15,11 @@ reopen the folder in vs code
 ```sh
 code .
 ```
+# Run the project in Vite
+```sh
+npm run start
+```
+# build the project using vite
+```sh
+npm run build
+```
