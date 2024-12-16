@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body class="dark:bg-almost-black bg-slate-200">
+    <div class="container ml-6 flex  gap-1 mt-7 flex-col  p-3">
+        <h1 class="dark:text-white text-black text-5xl font-semibold mb-5">Generate a <br>
+            <span class="underline text-regal-green text-4xl">Random Password
+            </span>
+        </h1>
+        <form class="relative w-4/5 " action="">
+            <input id="Password" class="w-full h-auto py-5 text-2xl pl-3 rounded-md overflow-hidden placeholder:text-slate-600 bg-slate-300 text-black dark:text-black" type="text" placeholder="Password" >
+            <img id="copy" class="w-8 absolute top-5 right-4 cursor-pointer" src="./src/img/file-copy-line.svg" alt="" >
+            <button id="btnGenerate" class="cursor-pointer bg-regal-green mt-5 px-3 py-2 text-black dark:text-white rounded-md flex gap-1 items-center justify-center" type="button">
+                <img class="w-4 " src="./src/img/key-line.svg" alt="">Generate Password</button>
+        </form>
+    </div>
+    <script type="module" src="./src/script.js"></script>
+</body>
+</html>
