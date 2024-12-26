@@ -1,5 +1,5 @@
 # tailwindcss-mini-project
-
+in this repository i upload some of my work in tailwind 
 # install and run
 - clone the project 
 - reopen the targeted project in vsCode
