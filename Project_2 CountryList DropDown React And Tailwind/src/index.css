@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.selectStyle {
+  @apply block w-full outline-none mb-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 text-white shadow-md ;
+}
