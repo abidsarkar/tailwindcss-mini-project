@@ -24,11 +24,11 @@ const DropDown = () => {
     setStates(fetchedStates);
   };
   //handleStateChange
-  const handleStateChange =(e)=>{
+  const handleStateChange = (e) => {
     const stateCode = e.target.value;
     const fetchedCities = City.getCitiesOfState(selectedCountry, stateCode);
     setCities(fetchedCities);
-  }
+  };
   return (
     <div className="p-5 sm:w-[600px] bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg text-center">
       <h1 className="text-white text-lg sm:text-2xl lg:text-3xl font-bold">
@@ -54,24 +54,32 @@ const DropDown = () => {
           ))}
         </select>
         {/* state dropDown */}
-        <select className="selectStyle"
-         name="" 
-         id=""
-         onChange={handleStateChange}
-         disabled={!states.length}
-         >
+        <select
+          className="selectStyle"
+          onChange={handleStateChange}
+          disabled={!states.length}
+        >
           <option value="">Select State</option>
-          {
-            states.map((state)=>{
-                <option 
-                key={state.isoCode}
-                value={state.isoCode}
-                >{state.name}</option>
-            })
-          }
+          {states.map((state) => (
+            <option
+              key={state.isoCode}
+              value={state.isoCode}
+              className="text-black"
+            >
+              {state.name}
+            </option>
+          ))}
         </select>
-        <select className="selectStyle" name="" id="">
+        {/* cities dropDown */}
+        <select className="selectStyle" disabled={!cities.length}>
           <option value="">Select City</option>
+          {cities.map((city) => (
+            <option
+              key={city.name}
+              value={city.name}
+              className="text-black"
+            >{city.name}</option>
+          ))}
         </select>
       </div>
     </div>
