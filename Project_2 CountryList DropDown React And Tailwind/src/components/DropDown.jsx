@@ -16,13 +16,19 @@ const DropDown = () => {
   const allCountries = Country.getAllCountries(); // it's an Array
   //   handleCountryChange
   const handleCountryChange = (e) => {
-    const countryCode = e.target.value 
-    setSelectedCountry(countryCode)
-    setCities([])
+    const countryCode = e.target.value;
+    setSelectedCountry(countryCode);
+    setCities([]);
 
-    const fetchedStates = State.getStatesOfCountry(countryCode)
-    setStates(fetchedStates)
-}
+    const fetchedStates = State.getStatesOfCountry(countryCode);
+    setStates(fetchedStates);
+  };
+  //handleStateChange
+  const handleStateChange =(e)=>{
+    const stateCode = e.target.value;
+    const fetchedCities = City.getCitiesOfState(selectedCountry, stateCode);
+    setCities(fetchedCities);
+  }
   return (
     <div className="p-5 sm:w-[600px] bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg text-center">
       <h1 className="text-white text-lg sm:text-2xl lg:text-3xl font-bold">
@@ -47,8 +53,22 @@ const DropDown = () => {
             </option>
           ))}
         </select>
-        <select className="selectStyle" name="" id="">
+        {/* state dropDown */}
+        <select className="selectStyle"
+         name="" 
+         id=""
+         onChange={handleStateChange}
+         disabled={!states.length}
+         >
           <option value="">Select State</option>
+          {
+            states.map((state)=>{
+                <option 
+                key={state.isoCode}
+                value={state.isoCode}
+                >{state.name}</option>
+            })
+          }
         </select>
         <select className="selectStyle" name="" id="">
           <option value="">Select City</option>
