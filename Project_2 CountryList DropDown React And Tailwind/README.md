@@ -1,3 +1,7 @@
+![alt text](image.png)
+# Drop Down for country state city using react and tailwind css
+this project is using the npm package and simple react tailwind to show drop down country state and city
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
